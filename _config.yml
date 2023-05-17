@@ -1,0 +1,89 @@
+# For Atom Feed
+domain: services.github.com
+author: GitHub, Inc.
+email: services@github.com
+
+# Site Settings
+locale: "en-US"
+# Keep original, do not replace
+title: "GitHub Cheatsheets"
+title_separator: "-"
+name: "GitHub, Inc."
+description:
+url: "https://training.github.com"
+baseurl: "" # the subpath of your site, e.g. "/blog"
+gh_repo: github/training-kit
+repository: github/training-kit
+teaser: # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
+breadcrumbs: true # true, false (default)
+words_per_minute: 200
+
+analytics:
+  provider: google # false (default), "google", "google-universal", "custom"
+  google:
+    tracking_id: UA-3769691-2
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Standard jekyll configuration
+parentsite: https://services.github.com
+permalink: /articles/:title/
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-octicons
+
+exclude:
+  - bin
+  - config.rb
+  - Gemfile*
+  - gems
+  - node_modules
+  - Procfile
+  - Rakefile
+  - README.md
+  - script
+  - vendor
+  - package.json
+  - package-lock.json
+
+collections:
+  modules:
+    output: true
+  courses:
+    output: true
+
+include:
+  - _stylesheets
+  - _javascript
+
+# Primer CSS (https://primer.style/css/getting-started#for-a-jekyll-site)
+sass:
+  sass_dir: assets/css
+  load_paths:
+    - assets/_scss
+    - node_modules
+  style: compressed
+  implementation: sass-embedded
+
+# Custom site configuration
+lang: en
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: "en"
+      redirect_to:
+        - https://training.github.com
